@@ -17,13 +17,6 @@ steps:
     restoreSolution: '$(solution)'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-    projects: '$(solution)'
-    publishWebProjects: false
-    arguments: '-c Release -r win-x64'
-
-- task: DotNetCoreCLI@2
-  inputs:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
