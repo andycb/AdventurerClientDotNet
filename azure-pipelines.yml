@@ -15,12 +15,20 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    publishWebProjects: false
+    arguments: '--configuration $(BuildConfiguration)'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/Console/win-x64 --self-contained true'
+    arguments: '--configuration $(BuildConfiguration) -r win-64  --output $(Build.ArtifactStagingDirectory)/Console/win-x64 --self-contained true'
     zipAfterPublish: true
 
 - task: DotNetCoreCLI@2
@@ -28,7 +36,7 @@ steps:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/Console/osx-x64 --self-contained true'
+    arguments: '--configuration $(BuildConfiguration) -r osx-64 --output $(Build.ArtifactStagingDirectory)/Console/osx-x64 --self-contained true'
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
