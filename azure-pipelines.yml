@@ -28,7 +28,7 @@ steps:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) -r win-64 --output $(Build.ArtifactStagingDirectory)/Console --self-contained true'
+    arguments: '--configuration $(BuildConfiguration) -r win-x64 --output $(Build.ArtifactStagingDirectory)/Console/win-x64 --self-contained true'
     zipAfterPublish: true
 
 - task: DotNetCoreCLI@2
@@ -36,7 +36,7 @@ steps:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) -r osx-64 --output $(Build.ArtifactStagingDirectory)/Console/osx-x64 --self-contained true'
+    arguments: '--configuration $(BuildConfiguration) -r osx-x64 --output $(Build.ArtifactStagingDirectory)/Console/osx-x64 --self-contained true'
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
