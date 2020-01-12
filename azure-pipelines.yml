@@ -1,0 +1,5 @@
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '-c Release -r win-x64  --self-contained true'
