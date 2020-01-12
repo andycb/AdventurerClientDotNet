@@ -26,7 +26,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    projects: '$(solution)'
+    projects: 'AdventurerClientDotNet.Console\AdventurerClientDotNet.Console.csproj'
     publishWebProjects: false
     arguments: '--configuration $(BuildConfiguration) -r win-x64 --output $(Build.ArtifactStagingDirectory)/Console/win-x64 --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=true'
     zipAfterPublish: true
@@ -34,7 +34,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    projects: '$(solution)'
+    projects: 'AdventurerClientDotNet.Console\AdventurerClientDotNet.Console.csproj'
     publishWebProjects: false
     arguments: '--configuration $(BuildConfiguration) -r osx-x64 --output $(Build.ArtifactStagingDirectory)/Console/osx-x64 --self-contained true /p:PublishSingleFile=true /p:PublishTrimmed=true'
     zipAfterPublish: true
