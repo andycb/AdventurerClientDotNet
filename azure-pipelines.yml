@@ -18,11 +18,13 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: 'AdventurerClientDotNet.sln'
+    projects: '$(solution)'
+    publishWebProjects: false
     arguments: '-c Release -r win-x64'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
-    projects: 'AdventurerClientDotNet.Console/AdventurerClientDotNet.Console.csproj'
+    projects: '$(solution)'
+    publishWebProjects: false
     arguments: '-c Release -r win-x64  --self-contained true'
