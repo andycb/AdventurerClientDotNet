@@ -28,7 +28,7 @@ steps:
     command: 'publish'
     projects: '$(solution)'
     publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) -r win-64  --output $(Build.ArtifactStagingDirectory)/Console/win-x64 --self-contained true'
+    arguments: '--configuration $(BuildConfiguration) -r win-64 --output $(Build.ArtifactStagingDirectory)/Console --self-contained true'
     zipAfterPublish: true
 
 - task: DotNetCoreCLI@2
