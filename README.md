@@ -11,4 +11,12 @@ Currently this is a limited MVP, supporting reading some information from the pr
 1) Press play in Visual Studio
 
 ## Running
-A Windows version is packaged in the releases - its is a self contained .NET Core executable, so should run with zero dependencies on any 64 bit machine running Windows 7 or newer,
+A Windows version is packaged in the [releases](https://github.com/andycb/AdventurerClientDotNet/releases) - its is a self contained .NET Core executable, so should run with zero dependencies on any 64 bit machine running Windows 7 or newer.
+
+## TODO
+⏺ Support for more commands
+⏺ Make `Printer` class thread safe
+⏺ Support command line arguments
+⏺ Add GUI
+⏺ Unit tests
+⏺ Set up Azure DevOps Pipline for other platforms than Windows x64
