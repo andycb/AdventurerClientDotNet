@@ -1,8 +1,6 @@
 # AdventurerClientDotNet
 A cross platform .NET library for communicating with the FlashForge Adventurer and Monoprice Voxel.
 
-A Python script for displaying weather and travel information on a Pimoroni Inky wHAT display. For the full write up of this project, see https://andybradford.dev/2020/01/12/using-the-monoprice-voxel-with-ultimaker-cura/.
-
 Currently this is a limited MVP, supporting reading some information from the printer and sending G Code files to it. The interface code is broken out into its own project, with a Console application referencing it.
 
 ## Building
